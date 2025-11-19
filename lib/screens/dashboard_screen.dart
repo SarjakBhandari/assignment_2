@@ -1,6 +1,8 @@
 import 'package:assignment_2/screens/area_of_circle.dart';
 import 'package:assignment_2/screens/arithmetic_screen.dart';
+import 'package:assignment_2/screens/flutter_layout_screen.dart';
 import 'package:assignment_2/screens/palindrome_screen.dart';
+import 'package:assignment_2/screens/rich_text_screen.dart';
 import 'package:assignment_2/screens/simple_interest_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -66,8 +68,8 @@ class _DashboardScreenState extends State<Dashboard> {
               ),
             ),
             SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
+                width: double.infinity,
+                child: ElevatedButton(
                 onPressed: () {
                   setState(() {
                     Navigator.push(
@@ -79,6 +81,40 @@ class _DashboardScreenState extends State<Dashboard> {
                   });
                 },
                 child: Text("Palindrome"),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RichTextScreen(),
+
+                      ),
+                    );
+                  });
+                },
+                child: Text("RichText"),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlutterLayoutScreen(),
+
+                      ),
+                    );
+                  });
+                },
+                child: Text("LayoutScreen"),
               ),
             ),
           ],
