@@ -9,9 +9,17 @@ class ArithmeticScreen extends StatefulWidget {
 }
 
 class _ArithmeticScreenState extends State<ArithmeticScreen> {
-  double first = 0;
-  double second = 0;
-  double third = 0;
+  // double first = 0;
+  // double second = 0;
+
+  //controller
+  final TextEditingController textEditingController1 = TextEditingController(text: "1");
+  final TextEditingController textEditingController2 = TextEditingController(text: "2");
+
+  // global key for form state
+  final _formKey = GlobalKey<FormState>();
+  double result = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,33 +29,54 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
       ),
       body: Padding(
         padding: EdgeInsets.all(8),
-        child: Column(
+        child:
+        Form(
+          key: _formKey,
+          child: Column(
           children: [
-            TextField(
+            TextFormField(
+              controller: textEditingController1,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: "Enter first no",
                 hintText: "e.g 2",
                 border: OutlineInputBorder(),
               ),
-              onChanged: (value) => {first = double.parse(value)},
+              validator: (value){
+                  if (value == null || value.isEmpty) {
+                    return "Please enter first no";
+                  }
+                  return null;
+                              },
             ),
             SizedBox(height: 8),
-            TextField(
+            TextFormField(
+              controller: textEditingController2,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: "Enter second no",
                 hintText: "e.g 2",
                 border: OutlineInputBorder(),
               ),
-              onChanged: (value) => {second = double.parse(value)},
+              validator: (value){
+                if(value == null || value.isEmpty){
+                  return "Please enter second no";
+                }
+                return null;
+              },
             ),
             SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  if (_formKey.currentState!.validate()) {
                   setState(() {
-                    third = first + second;
-                  });
+                    double first=double.parse(textEditingController1.text);
+                    double second=double.parse(textEditingController2.text);
+
+                    result = first + second;
+                  });}
                 },
                 child: Text("SUM"),
               ),
@@ -57,9 +86,12 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  if (_formKey.currentState!.validate()) {
                   setState(() {
-                    third = first * second;
-                  });
+                    double first=double.parse(textEditingController1.text);
+                    double second=double.parse(textEditingController2.text);
+                    result = first * second;
+                  });}
                 },
                 child: Text("Multiplication"),
               ),
@@ -70,9 +102,12 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  if (_formKey.currentState!.validate()) {
                   setState(() {
-                    third = first - second;
-                  });
+                    double first=double.parse(textEditingController1.text);
+                    double second=double.parse(textEditingController2.text);
+                    result = first - second;
+                  });}
                 },
                 child: Text("Substaction"),
               ),
@@ -81,14 +116,17 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  if (_formKey.currentState!.validate()) {
                   setState(() {
-                    third = first / second;
-                  });
+                    double first=double.parse(textEditingController1.text);
+                    double second=double.parse(textEditingController2.text);
+                    result = first / second;
+                  });}
                 },
                 child: Text("Division"),
               ),
             ),
-            Text("Result= $third"),
+            Text("Result= $result"),
             SizedBox(height: 8),
             SizedBox(
               width: double.infinity,
@@ -107,6 +145,6 @@ class _ArithmeticScreenState extends State<ArithmeticScreen> {
           ],
         ),
       ),
-    );
+    ));
   }
 }

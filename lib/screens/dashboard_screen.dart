@@ -1,6 +1,9 @@
 import 'package:assignment_2/screens/area_of_circle.dart';
 import 'package:assignment_2/screens/arithmetic_screen.dart';
+import 'package:assignment_2/screens/column_screen.dart';
+import 'package:assignment_2/screens/container_screen.dart';
 import 'package:assignment_2/screens/flutter_layout_screen.dart';
+import 'package:assignment_2/screens/image_screen.dart';
 import 'package:assignment_2/screens/palindrome_screen.dart';
 import 'package:assignment_2/screens/rich_text_screen.dart';
 import 'package:assignment_2/screens/simple_interest_screen.dart';
@@ -115,6 +118,57 @@ class _DashboardScreenState extends State<Dashboard> {
                   });
                 },
                 child: Text("LayoutScreen"),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ColumnScreen(),
+
+                      ),
+                    );
+                  });
+                },
+                child: Text("Column Screen"),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ContainerScreen(),
+
+                      ),
+                    );
+                  });
+                },
+                child: Text("Container Screen"),
+              ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ImageScreen(),
+
+                      ),
+                    );
+                  });
+                },
+                child: Text("image Screen"),
               ),
             ),
           ],
