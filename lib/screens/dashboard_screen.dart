@@ -2,11 +2,14 @@ import 'package:assignment_2/screens/area_of_circle.dart';
 import 'package:assignment_2/screens/arithmetic_screen.dart';
 import 'package:assignment_2/screens/column_screen.dart';
 import 'package:assignment_2/screens/container_screen.dart';
+import 'package:assignment_2/screens/custom_layout.dart';
+import 'package:assignment_2/screens/flexible_extendable_screen.dart';
 import 'package:assignment_2/screens/flutter_layout_screen.dart';
 import 'package:assignment_2/screens/image_screen.dart';
 import 'package:assignment_2/screens/palindrome_screen.dart';
 import 'package:assignment_2/screens/rich_text_screen.dart';
 import 'package:assignment_2/screens/simple_interest_screen.dart';
+import 'package:assignment_2/screens/snack_bar_screen.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -23,155 +26,208 @@ class _DashboardScreenState extends State<Dashboard> {
       appBar: AppBar(title: Text("Dashboard"), backgroundColor: Colors.amber),
       body: Padding(
         padding: EdgeInsets.all(8),
-        child: Column(
-          children: [
-            SizedBox(height: 8),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    const arithmetic = ArithmeticScreen();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => arithmetic),
-                    );
-                  });
-                },
-                child: Text("Arithmetic"),
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    const simpleInterst = SimpleInterestScreen();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => simpleInterst),
-                    );
-                  });
-                },
-                child: Text("Simple Interest"),
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AreaOfCircle()),
-                    );
-                  });
-                },
-                child: Text("Area of Circle"),
-              ),
-            ),
-            SizedBox(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 8),
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PalindromeScreen(),
-                      ),
-                    );
-                  });
-                },
-                child: Text("Palindrome"),
+                  onPressed: () {
+                    setState(() {
+                      const arithmetic = ArithmeticScreen();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => arithmetic),
+                      );
+                    });
+                  },
+                  child: Text("Arithmetic"),
+                ),
               ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RichTextScreen(),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      const simpleInterst = SimpleInterestScreen();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => simpleInterst),
+                      );
+                    });
+                  },
+                  child: Text("Simple Interest"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AreaOfCircle()),
+                      );
+                    });
+                  },
+                  child: Text("Area of Circle"),
+                ),
+              ),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PalindromeScreen(),
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("Palindrome"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RichTextScreen(),
+          
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("RichText"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FlutterLayoutScreen(),
+          
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("LayoutScreen"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ColumnScreen(),
+          
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("Column Screen"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ContainerScreen(),
+          
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("Container Screen"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageScreen(),
+          
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("image Screen"),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FlexibleExtendableScreen(),
 
-                      ),
-                    );
-                  });
-                },
-                child: Text("RichText"),
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("Flexible Screen"),
+                ),
               ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FlutterLayoutScreen(),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SnackBarScreen(),
 
-                      ),
-                    );
-                  });
-                },
-                child: Text("LayoutScreen"),
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("snack bar Screen"),
+                ),
               ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ColumnScreen(),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CustomLayout(),
 
-                      ),
-                    );
-                  });
-                },
-                child: Text("Column Screen"),
+                        ),
+                      );
+                    });
+                  },
+                  child: Text("Custom Layout Screen"),
+                ),
               ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ContainerScreen(),
-
-                      ),
-                    );
-                  });
-                },
-                child: Text("Container Screen"),
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ImageScreen(),
-
-                      ),
-                    );
-                  });
-                },
-                child: Text("image Screen"),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
